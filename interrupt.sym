@@ -1,0 +1,45 @@
+
+interrupt:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+10010000 l    d  .text	00000000 .text
+10010240 l    d  .data	00000000 .data
+100103ac l    d  .sbss	00000000 .sbss
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    df *ABS*	00000000 /tmp/ccDOuNOx.o
+10010006 l       .text	00000000 handle_reset
+10010002 l       .text	00000000 nmi_vector
+10010004 l       .text	00000000 trap_vector
+100100a4 l       .text	00000000 trap_entry
+10010240 l       .data	00000000 stack_bottom
+10010146 l       .text	00000000 loop_forever
+100103a8 l       .data	00000000 stack_top
+100103a8 l       .data	00000000 initialized
+00000000 l    df *ABS*	00000000 init.c
+00000000 l    df *ABS*	00000000 interrupt.c
+100103b8 l     O .sbss	00000004 interrupt_count
+100103b4 l     O .sbss	00000004 local
+100103b0 l     O .sbss	00000004 hartid
+10010bac g       .data	00000000 __global_pointer$
+1001014a g     F .text	00000014 set_trap_handler
+1001016c g     F .text	0000002c handle_trap
+100103bc g       .sbss	00000000 __bss_end
+100101ae g     F .text	00000034 hander
+100101a6 g     F .text	00000008 _init
+100103ac g     O .sbss	00000004 trap_handler
+100103bc g       .sbss	00000000 __malloc_start
+10010000 g       .text	00000000 _start
+100103ac g       .data	00000000 __bss_start
+100101e2 g     F .text	0000005c main
+1001015e g     F .text	0000000e enable_timer_interrupts
+100105bc g       .sbss	00000000 _end
+10010198 g     F .text	0000000e _exit
+
+
