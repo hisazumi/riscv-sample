@@ -10,7 +10,7 @@ void *hander(unsigned hartid, unsigned mcause, void *mepc, void *sp)
 {
     interrupt_count++;
     ghartid = hartid;
-    MTIMECMP[0] = MTIME + delta;
+    // MTIMECMP[0] = MTIME + delta;
     return mepc;
 }
 
@@ -20,7 +20,7 @@ int main()
     local = 0;
 
     set_trap_handler(hander);
-    MTIMECMP[0] = MTIME + 10;
+    // MTIMECMP[0] = MTIME + 10;
     enable_timer_interrupts();
 
     while (1) {
