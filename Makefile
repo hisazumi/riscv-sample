@@ -12,8 +12,11 @@ run: interrupt interrupt.sym
 rinterrupt: interrupt interrupt.sym makespike
 	LD_LIBRARY_PATH=$(SPIKE_PATH) $(SPIKE_PATH)/spike $(SPIKE_FLAGS) interrupt
 
-rmemmapio: rmemmapio makespike
+rmemmapio: memmapio makespike
 	LD_LIBRARY_PATH=$(SPIKE_PATH) $(SPIKE_PATH)/spike $(SPIKE_FLAGS) memmapio
+
+rmemmapioread: memmapioread makespike
+	LD_LIBRARY_PATH=$(SPIKE_PATH) $(SPIKE_PATH)/spike $(SPIKE_FLAGS) memmapioread
 
 makespike:
 	 (cd ../riscv-isa-sim/build && make -j 8)
@@ -26,6 +29,9 @@ interrupt: entry.S init.c interrupt.c spike32.lds
 
 memmapio: entry.S init.c memmapio.c spike32.lds
 	$(CC) -g -Og entry.S init.c memmapio.c $(FLAGS) -o memmapio
+
+memmapioread: entry.S init.c memmapioread.c spike32.lds
+	$(CC) -g -Og entry.S init.c memmapioread.c $(FLAGS) -o memmapioread
 
 clean:
 	rm -f memmapio interrupt interrupt.sym
